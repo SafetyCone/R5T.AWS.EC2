@@ -4,4 +4,8 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>1701;1702;1591;1573</NoWarn>
   </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\R5T.AWS.EC2.Configuration\source\R5T.AWS.EC2.Configuration\R5T.AWS.EC2.Configuration.csproj" />
+    <ProjectReference Include="..\..\..\R5T.NetStandard.SSH\source\R5T.NetStandard.SSH\R5T.NetStandard.SSH.csproj" />
+  </ItemGroup>
 </Project>
