@@ -6,7 +6,14 @@ namespace R5T.AWS.EC2.Construction
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Construction.SubMain();
+
+            Program.SubMain();
+        }
+
+        private static void SubMain()
+        {
+
         }
     }
 }
