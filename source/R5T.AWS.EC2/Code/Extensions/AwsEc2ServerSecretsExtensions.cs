@@ -42,5 +42,28 @@ namespace R5T.AWS.EC2
 
             return clientWrapper;
         }
+
+        /// <summary>
+        /// Gets a <see cref="SshClientWrapper"/> for which the Connect() method has NOT been called.
+        /// </summary>
+        public static SshClientWrapper GetUnconnectedSshClientWrapper(this AwsEc2ServerSecrets awsEc2ServerSecrets)
+        {
+            var connectionInfo = awsEc2ServerSecrets.GetConnectionInfo();
+
+            var clientWrapper = new SshClientWrapper(connectionInfo);
+            return clientWrapper;
+        }
+
+        /// <summary>
+        /// Gets a connected <see cref="SshClientWrapper"/>.
+        /// </summary>
+        public static SshClientWrapper GetSshClientWrapper(this AwsEc2ServerSecrets awsEc2ServerSecrets)
+        {
+            var clientWrapper = awsEc2ServerSecrets.GetUnconnectedSshClientWrapper();
+
+            clientWrapper.SshClient.Connect();
+
+            return clientWrapper;
+        }
     }
 }
