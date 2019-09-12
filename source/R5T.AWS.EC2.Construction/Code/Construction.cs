@@ -11,10 +11,10 @@ namespace R5T.AWS.EC2.Construction
     {
         public static void SubMain()
         {
-            Construction.ConnectToAwsEc2Host();
+            Construction.TryConnectToAwsEc2Host();
         }
 
-        private static void ConnectToAwsEc2Host()
+        private static void TryConnectToAwsEc2Host()
         {
             var configuration = new ConfigurationBuilder()
                 .AddAwsEc2ServerSecretsJsonFile()
